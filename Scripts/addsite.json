@@ -1,0 +1,14 @@
+{
+    "dmsName": "AVX DMS",
+    "dmsUrl": "https://onlinecourse.sharepoint.com/teams/avx-dms-038",
+    "dmsAdmins": "AVXDMSSITE@onlinecourse.cz",
+    "storageQuota": 26214400,
+    "lcid": 1033,
+    "timeZone": 4,
+    "dmsLibraries" : [
+        {
+            "lib": "Docs",
+            "title": "Docs"
+        }
+    ]
+}

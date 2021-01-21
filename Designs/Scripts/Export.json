@@ -1,0 +1,176 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/site-design-script-actions.schema.json",
+  "actions": [
+    {
+      "verb": "createSiteColumnXml",
+      "schemaXml": "<Field Type=\"TaxonomyFieldType\" DisplayName=\"Plant\" ShowField=\"Term1033\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Group=\"AVX-DMS\" ID=\"{9b6a4261-982c-42f7-aeca-cbf09626ae73}\" StaticName=\"Plant\" Name=\"Plant\" Customization=\"\" AllowDeletion=\"TRUE\"><Default /><Customization><ArrayOfProperty><Property><Name>SspId</Name><Value xmlns:q1=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q1:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">ec8c003d-f5aa-4e84-bb4b-53efe1b25d54</Value></Property><Property><Name>GroupId</Name></Property><Property><Name>TermSetId</Name><Value xmlns:q2=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q2:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">a9e92694-a2ea-4c90-87ae-0956dfa24782</Value></Property><Property><Name>AnchorId</Name><Value xmlns:q3=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q3:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">00000000-0000-0000-0000-000000000000</Value></Property><Property><Name>UserCreated</Name><Value xmlns:q4=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q4:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>Open</Name><Value xmlns:q5=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q5:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsPathRendered</Name><Value xmlns:q7=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q7:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsKeyword</Name><Value xmlns:q8=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q8:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>TargetTemplate</Name></Property><Property><Name>CreateValuesInEditForm</Name><Value xmlns:q9=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q9:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>FilterAssemblyStrongName</Name><Value xmlns:q10=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q10:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value></Property><Property><Name>FilterClassName</Name><Value xmlns:q11=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q11:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value></Property><Property><Name>FilterMethodName</Name><Value xmlns:q12=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q12:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">GetFilteringHtml</Value></Property><Property><Name>FilterJavascriptProperty</Name><Value xmlns:q13=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q13:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">FilteringJavascript</Value></Property></ArrayOfProperty></Customization></Field>",
+      "pushChanges": true
+    },
+    {
+      "verb": "createSiteColumnXml",
+      "schemaXml": "<Field Type=\"Text\" Name=\"AVXDocumentNumber\" DisplayName=\"AVX Document Number\" ID=\"{2ab98521-2d48-4fbf-a0b3-2d74f780adb3}\" Required=\"FALSE\" StaticName=\"AVXDocumentNumber\" Group=\"AVX-DMS\" Customization=\"\" AllowDeletion=\"TRUE\" />",
+      "pushChanges": true
+    },
+    {
+      "verb": "createSiteColumnXml",
+      "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Stage\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"RadioButtons\" FillInChoice=\"FALSE\" Group=\"AVX-DMS\" ID=\"{a9b58e64-0e0f-4ec5-b15c-4e312617761e}\" StaticName=\"Stage\" Name=\"Stage\" Customization=\"\"><Default>Non Active</Default><CHOICES><CHOICE>Active</CHOICE><CHOICE>Non Active</CHOICE></CHOICES></Field>",
+      "pushChanges": true
+    },
+    {
+      "verb": "createSiteColumnXml",
+      "schemaXml": "<Field Type=\"Text\" DisplayName=\"Document Number\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" MaxLength=\"255\" Group=\"AVX-DMS\" ID=\"{daa14bbc-7cb4-4b64-a834-81d72fa21b01}\" StaticName=\"DocumentNumber\" Name=\"DocumentNumber\" CustomFormatter=\"\" Customization=\"\" AllowDeletion=\"TRUE\" />",
+      "pushChanges": true
+    },
+    {
+      "verb": "createSiteColumnXml",
+      "schemaXml": "<Field Type=\"User\" Name=\"ReleaseNotification\" DisplayName=\"Release Notification\" ID=\"{965e9a55-27ea-4a7f-94c9-fbdd96c7c3b8}\" Required=\"FALSE\" StaticName=\"ReleaseNotification\" Group=\"AVX-DMS\" Customization=\"\" />",
+      "pushChanges": true
+    },
+    {
+      "verb": "createContentType",
+      "name": "Doc",
+      "id": "0x01010060CBEAC1BB67614E944C5DF1B99C0D04",
+      "description": "AVX-DMS Document Base Content Type",
+      "parentId": "0x0101",
+      "hidden": false,
+      "group": "AVX-DMS",
+      "subactions": [
+        {
+          "verb": "addSiteColumn",
+          "internalName": "Plant"
+        },
+        {
+          "verb": "addSiteColumn",
+          "internalName": "AVXDocumentNumber"
+        },
+        {
+          "verb": "addSiteColumn",
+          "internalName": "Stage"
+        },
+        {
+          "verb": "addSiteColumn",
+          "internalName": "DocumentNumber"
+        },
+        {
+          "verb": "addSiteColumn",
+          "internalName": "ReleaseNotification"
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "Docs",
+      "templateType": 101,
+      "subactions": [
+        {
+          "verb": "addContentType",
+          "name": "Doc"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{47b1b86f-9f8a-4dbe-a75e-ca5d9b0f566c}\" Type=\"URL\" Name=\"_ShortcutUrl\" DisplayName=\"Shortcut URL\" DisplaceOnUpgrade=\"TRUE\" Indexed=\"FALSE\" Required=\"FALSE\" Hidden=\"TRUE\" ReadOnlyField=\"TRUE\" ShowInEditForm=\"FALSE\" ShowInDisplayForm=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ShortcutUrl\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{2662ad77-2410-4938-b01c-e5e43321bad4}\" Type=\"Guid\" Name=\"_ShortcutSiteId\" DisplayName=\"Shortcut Site Id\" DisplaceOnUpgrade=\"TRUE\" Indexed=\"FALSE\" Required=\"FALSE\" Hidden=\"TRUE\" ReadOnlyField=\"TRUE\" ShowInEditForm=\"FALSE\" ShowInDisplayForm=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ShortcutSiteId\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{e2a3861f-c216-47d7-820f-7cb638862ab2}\" Type=\"Guid\" Name=\"_ShortcutWebId\" DisplayName=\"Shortcut Web Id\" DisplaceOnUpgrade=\"TRUE\" Indexed=\"FALSE\" Required=\"FALSE\" Hidden=\"TRUE\" ReadOnlyField=\"TRUE\" ShowInEditForm=\"FALSE\" ShowInDisplayForm=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ShortcutWebId\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{e8fea999-553d-4f45-be52-d941627e9fe5}\" Type=\"Guid\" Name=\"_ShortcutUniqueId\" DisplayName=\"Shortcut Unique Id\" DisplaceOnUpgrade=\"TRUE\" Indexed=\"FALSE\" Required=\"FALSE\" Hidden=\"TRUE\" ReadOnlyField=\"TRUE\" ShowInEditForm=\"FALSE\" ShowInDisplayForm=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ShortcutUniqueId\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{5f47e085-2150-41dc-b661-442f3027f552}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"SelectFilename\" DisplayName=\"Select\" Hidden=\"TRUE\" CanToggleHidden=\"TRUE\" Sortable=\"FALSE\" Filterable=\"FALSE\" AuthoringInfo=\"(web part connection)\" HeaderImage=\"blank.gif\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SelectFilename\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern><IfEqual><Expr1><GetVar Name=\"SelectedID\" /></Expr1><Expr2><Column Name=\"ID\" /></Expr2><Then><HTML><![CDATA[<img align=\"absmiddle\" style=\"cursor: pointer\" src=\"/_layouts/15/images/rbsel.gif?rev=47\" alt=\"]]></HTML><HTML>Selected</HTML><HTML><![CDATA[\"/>]]></HTML></Then><Else><HTML><![CDATA[<a href=\"javascript:SelectField(']]></HTML><GetVar Name=\"View\" /><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"ID\" /></ScriptQuote><HTML><![CDATA[');return false;\" onclick=\"javascript:SelectField(']]></HTML><GetVar Name=\"View\" /><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"ID\" /></ScriptQuote><HTML><![CDATA[');return false;\" target=\"_self\">]]></HTML><HTML><![CDATA[<img border=\"0\" align=\"absmiddle\" style=\"cursor: pointer\" src=\"/_layouts/15/images/rbunsel.gif?rev=47\"  alt=\"]]></HTML><HTML>Normal</HTML><HTML><![CDATA[\"/>]]></HTML><HTML><![CDATA[</a>]]></HTML></Else></IfEqual></DisplayPattern></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{e52012a0-51eb-4c0c-8dfb-9b8a0ebedcb6}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"Combine\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Merge\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Combine\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"EncodedAbsUrl\" /><FieldRef Name=\"TemplateUrl\" /></FieldRefs><DisplayPattern><IfEqual><Expr1><Field Name=\"FSObjType\" /></Expr1><Expr2>0</Expr2><Then><HTML><![CDATA[<input id=\"chkCombine\" type=\"CHECKBOX\" title=\"Merge]]\" href=\"]]></HTML><Field Name=\"EncodedAbsUrl\" /><HTML><![CDATA[\">]]></HTML><HTML><![CDATA[<input id=\"chkUrl\" type=\"HIDDEN\" href=\"]]></HTML><Column Name=\"TemplateUrl\" HTMLEncode=\"TRUE\" /><HTML><![CDATA[\">]]></HTML><HTML><![CDATA[<input id=\"chkProgID\" type=\"HIDDEN\" href=\"]]></HTML><MapToControl><HTML>|</HTML><GetFileExtension><Column Name=\"TemplateUrl\" HTMLEncode=\"TRUE\" /></GetFileExtension></MapToControl><HTML><![CDATA[\">]]></HTML></Then></IfEqual></DisplayPattern></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{5d36727b-bcb2-47d2-a231-1f0bc63b7439}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"RepairDocument\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Relink\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"RepairDocument\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern><IfEqual><Expr1><Field Name=\"FSObjType\" /></Expr1><Expr2>0</Expr2><Then><HTML><![CDATA[<input id=\"chkRepair\" type=\"CHECKBOX\" title=\"Relink\" docid=\"]]></HTML><Field Name=\"ID\" /><HTML><![CDATA[\">]]></HTML></Then></IfEqual></DisplayPattern></Field>"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Documents",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Modified",
+            "Editor",
+            "Title",
+            "DocumentNumber",
+            "_UIVersionString"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "DocExtends",
+      "templateType": 100,
+      "subactions": [
+        {
+          "verb": "addSPView",
+          "name": "All Items",
+          "viewFields": [
+            "LinkTitle"
+          ],
+          "query": "",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true
+        }
+      ]
+    }
+  ]
+}
+
+{
+  "verb": "addSPLookupFieldXml",
+  "schemaXml": "<Field Type=\"Lookup\" DisplayName=\"Lookup Field 1\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" ShowField=\"Title\" UnlimitedLengthInDocumentLibrary=\"FALSE\" RelationshipDeleteBehavior=\"None\" ID=\"{101f1f89-d667-4c7f-9ebc-76cb5831d0a2}\" StaticName=\"Lookup\" Name=\"Lookup\" />",
+  "targetListName": "Contoso Project List"
+},
+{
+  "verb": "addSPLookupFieldXml",
+  "schemaXml": "<Field Type=\"Lookup\" DisplayName=\"Lookup Field 2\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" ShowField=\"ProjectStatus\" UnlimitedLengthInDocumentLibrary=\"FALSE\" RelationshipDeleteBehavior=\"None\" ID=\"{c47fa195-12b5-4f22-9827-a8d18cba9061}\" StaticName=\"MyLookup1\" Name=\"MyLookup1\" />",
+  "targetListName": "Contoso Project List"
+},
+{
+  "verb": "addSPLookupFieldXml",
+  "schemaXml": "<Field Type=\"LookupMulti\" DisplayName=\"MultiLookup Field 3\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" ShowField=\"ProjectCategory\" Mult=\"TRUE\" Sortable=\"FALSE\" UnlimitedLengthInDocumentLibrary=\"FALSE\" RelationshipDeleteBehavior=\"None\" ID=\"{a52a0f21-9f49-45b4-80e7-bb78d6be3239}\" StaticName=\"MyLookup2\" Name=\"MyLookup2\" />",
+  "targetListName": "Contoso Project List"
+},
+
+$themepalette = @{
+  "themePrimary" = "#1eb4eb";
+  "themeLighterAlt" = "#f5fcfe";
+  "themeLighter" = "#d9f2fc";
+  "themeLight" = "#b8e8f9";
+  "themeTertiary" = "#74d1f3";
+  "themeSecondary" = "#38bded";
+  "themeDarkAlt" = "#1ba2d3";
+  "themeDark" = "#1789b2";
+  "themeDarker" = "#116583";
+  "neutralLighterAlt" = "#faf9f8";
+  "neutralLighter" = "#f3f2f1";
+  "neutralLight" = "#edebe9";
+  "neutralQuaternaryAlt" = "#e1dfdd";
+  "neutralQuaternary" = "#d0d0d0";
+  "neutralTertiaryAlt" = "#c8c6c4";
+  "neutralTertiary" = "#c6c3c3";
+  "neutralSecondary" = "#8e8a8a";
+  "neutralPrimaryAlt" = "#595555";
+  "neutralPrimary" = "#423f3f";
+  "neutralDark" = "#323030";
+  "black" = "#252323";
+  "white" = "#ffffff";
+  }

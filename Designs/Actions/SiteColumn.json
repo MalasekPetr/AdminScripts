@@ -1,0 +1,8 @@
+{
+    "verb": "createSiteColumn",
+    "group": "AVX-DMS",
+    "fieldType": "User",
+    "internalName": "TypeOwner",
+    "displayName": "Type Owner",
+    "id": "e33edd4f-c365-419a-a19f-ea1371bb5a65"
+}

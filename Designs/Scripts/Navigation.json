@@ -1,0 +1,28 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/site-design-script-actions.schema.json",
+    "actions": [
+        {
+            "verb": "addNavLink",
+            "url": "/Docs",
+            "displayName": "Docs",
+            "navComponent": "QuickLaunch",
+            "isWebRelative": true
+        },
+        {
+            "verb": "addNavLink",
+            "url": "/DocTypes",
+            "displayName": "Doc Types",
+            "navComponent": "QuickLaunch",
+            "isWebRelative": true
+        },
+        {
+            "verb": "addNavLink",
+            "url": "/Lists/DocExtends",
+            "displayName": "Doc Extends",
+            "navComponent": "QuickLaunch",
+            "isWebRelative": true
+        } 
+    ],
+    "bindata": { },
+    "version": 1
+  }

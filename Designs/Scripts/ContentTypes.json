@@ -1,0 +1,60 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/site-design-script-actions.schema.json",
+    "actions": [
+        {
+            "verb": "createContentType",
+            "group": "AVX-DMS",
+            "name": "DocType",
+            "description": "AVX-DMS Document Type Content Type",
+            "parentId": "0x0101",
+            "hidden": false,
+            "subactions": [
+              {
+                "verb": "addSiteColumn",
+                "internalName": "Plant"
+              },
+              {
+                "verb": "addSiteColumn",
+                "internalName": "Prefix"
+              },
+              {
+                "verb": "addSiteColumn",
+                "internalName": "Stage"
+              },
+              {
+                "verb": "addSiteColumn",
+                "internalName": "TypeOwner"
+              },
+              {
+                "verb": "addSiteColumn",
+                "internalName": "PeriodicReviewType"
+              },
+              {
+                "verb": "addSiteColumn",
+                "internalName": "PeriodicReviewIncrement"
+              },
+              {
+                "verb": "addSiteColumn",
+                "internalName": "ReleaseNotification"
+              }
+            ]
+        },
+        {
+          "verb": "createContentType",
+          "group": "AVX-DMS",
+          "name": "DocExtend",
+          "description": "AVX-DMS Document Extend Content Type",
+          "parentId": "0x01",
+          "hidden": false,
+          "subactions":
+            [
+              {
+                "verb": "addSiteColumn",
+                "internalName": "Plant"
+              }
+            ]
+      }
+    ],
+    "bindata": { },
+    "version": 1
+  }

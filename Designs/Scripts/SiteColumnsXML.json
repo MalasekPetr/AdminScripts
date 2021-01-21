@@ -1,0 +1,47 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/site-design-script-actions.schema.json",
+    "actions": [
+        {
+          "verb": "createSiteColumnXml",
+          "schemaXml": "<Field Type=\"Text\" DisplayName=\"Prefix\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" MaxLength=\"127\" Group=\"AVX-DMS\" ID=\"{d7b1b8db-a8ad-47d0-9ac6-ba092a3b5872}\" StaticName=\"Prefix\" Name=\"Prefix\" Customization=\"\" />",
+          "pushChanges": true
+        },
+        {
+          "verb": "createSiteColumnXml",
+          "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Stage\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"RadioButtons\" FillInChoice=\"FALSE\" Group=\"AVX-DMS\" ID=\"{a9b58e64-0e0f-4ec5-b15c-4e312617761e}\" StaticName=\"Stage\" Name=\"Stage\" Customization=\"\"><Default>Non Active</Default><CHOICES><CHOICE>Active</CHOICE><CHOICE>Non Active</CHOICE></CHOICES></Field>",
+          "pushChanges": true
+        },
+        {
+          "verb": "createSiteColumnXml",
+          "schemaXml": "<Field Type=\"TaxonomyFieldType\" DisplayName=\"Plant\" ShowField=\"Term1033\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Group=\"AVX-DMS\" ID=\"{9b6a4261-982c-42f7-aeca-cbf09626ae73}\" StaticName=\"Plant\" Name=\"Plant\" Customization=\"\" AllowDeletion=\"TRUE\"><Default /><Customization><ArrayOfProperty><Property><Name>SspId</Name><Value xmlns:q1=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q1:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">ec8c003d-f5aa-4e84-bb4b-53efe1b25d54</Value></Property><Property><Name>GroupId</Name></Property><Property><Name>TermSetId</Name><Value xmlns:q2=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q2:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">a9e92694-a2ea-4c90-87ae-0956dfa24782</Value></Property><Property><Name>AnchorId</Name><Value xmlns:q3=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q3:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">00000000-0000-0000-0000-000000000000</Value></Property><Property><Name>UserCreated</Name><Value xmlns:q4=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q4:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>Open</Name><Value xmlns:q5=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q5:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsPathRendered</Name><Value xmlns:q7=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q7:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsKeyword</Name><Value xmlns:q8=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q8:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>TargetTemplate</Name></Property><Property><Name>CreateValuesInEditForm</Name><Value xmlns:q9=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q9:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>FilterAssemblyStrongName</Name><Value xmlns:q10=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q10:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value></Property><Property><Name>FilterClassName</Name><Value xmlns:q11=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q11:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value></Property><Property><Name>FilterMethodName</Name><Value xmlns:q12=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q12:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">GetFilteringHtml</Value></Property><Property><Name>FilterJavascriptProperty</Name><Value xmlns:q13=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q13:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">FilteringJavascript</Value></Property></ArrayOfProperty></Customization></Field>",
+          "pushChanges": true
+        },
+        {
+          "verb": "createSiteColumnXml",
+          "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Periodic Review Type\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"RadioButtons\" FillInChoice=\"FALSE\" Group=\"AVX-DMS\" ID=\"{6dfc57c7-ea73-4b8a-946d-6be76ec0d99e}\" StaticName=\"PeriodicReviewType\" Name=\"PeriodicReviewType\" CustomFormatter=\"\" Customization=\"\"><Default>Year</Default><CHOICES><CHOICE>Year</CHOICE><CHOICE>Month</CHOICE><CHOICE>Week</CHOICE><CHOICE>Day</CHOICE></CHOICES></Field>",
+          "pushChanges": true
+        },
+        {
+          "verb": "createSiteColumnXml",
+          "schemaXml": "<Field Type=\"Number\" DisplayName=\"Periodic Review Increment\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Min=\"1\" Max=\"365\" Decimals=\"0\" Group=\"AVX-DMS\" ID=\"{52efc6d6-4f4d-41f8-8b71-8483c4305bb2}\" StaticName=\"PeriodicReviewIncrement\" Name=\"PeriodicReviewIncrement\" CustomFormatter=\"\" Percentage=\"FALSE\" Customization=\"\"><Default>1</Default></Field>",
+          "pushChanges": true
+        },
+        {
+          "verb": "createSiteColumnXml",
+          "schemaXml": "<Field Type=\"Note\" DisplayName=\"Document Description\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" NumLines=\"6\" RichText=\"FALSE\" Sortable=\"FALSE\" Group=\"AVX-DMS\" ID=\"{6036bcbd-960f-4ecd-a1a8-d5a31c58503a}\" StaticName=\"DocumentDescription\" Name=\"DocumentDescription\" CustomFormatter=\"\" RestrictedMode=\"TRUE\" RichTextMode=\"Compatible\" IsolateStyles=\"FALSE\" AppendOnly=\"FALSE\" UnlimitedLengthInDocumentLibrary=\"FALSE\" Customization=\"\" />",
+          "pushChanges": true
+        },
+        {
+          "verb": "createSiteColumnXml",
+          "schemaXml": "<Field Type=\"DateTime\" DisplayName=\"Next Review Date\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"DateOnly\" Group=\"AVX-DMS\" FriendlyDisplayFormat=\"Disabled\" ID=\"{c3af6ba0-909a-4282-8eaf-ce8cca3cf878}\" StaticName=\"NextReviewDate\" Name=\"NextReviewDate\" CustomFormatter=\"\" CalType=\"0\" Customization=\"\" />",
+          "pushChanges": true
+        },
+        {
+          "verb": "createSiteColumnXml",
+          "schemaXml": "<Field Type=\"TaxonomyFieldType\" DisplayName=\"Operations\" ShowField=\"Term1033\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Group=\"AVX-DMS\" ID=\"{7d558a0c-58e4-41f1-beec-3c7143acbf77}\" StaticName=\"Operations\" Name=\"Operations\" Customization=\"\"><Default /><Customization><ArrayOfProperty><Property><Name>SspId</Name><Value xmlns:q1=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q1:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">ec8c003d-f5aa-4e84-bb4b-53efe1b25d54</Value></Property><Property><Name>GroupId</Name></Property><Property><Name>TermSetId</Name><Value xmlns:q2=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q2:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">7c5d1e6e-09ba-47e4-ba21-372dfbfdd790</Value></Property><Property><Name>AnchorId</Name><Value xmlns:q3=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q3:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">00000000-0000-0000-0000-000000000000</Value></Property><Property><Name>UserCreated</Name><Value xmlns:q4=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q4:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>Open</Name><Value xmlns:q5=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q5:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsPathRendered</Name><Value xmlns:q7=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q7:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsKeyword</Name><Value xmlns:q8=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q8:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>TargetTemplate</Name></Property><Property><Name>CreateValuesInEditForm</Name><Value xmlns:q9=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q9:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>FilterAssemblyStrongName</Name><Value xmlns:q10=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q10:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value></Property><Property><Name>FilterClassName</Name><Value xmlns:q11=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q11:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value></Property><Property><Name>FilterMethodName</Name><Value xmlns:q12=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q12:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">GetFilteringHtml</Value></Property><Property><Name>FilterJavascriptProperty</Name><Value xmlns:q13=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q13:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">FilteringJavascript</Value></Property></ArrayOfProperty></Customization></Field>",
+          "pushChanges": true
+        }
+    ],
+    "bindata": { },
+    "version": 1
+  }

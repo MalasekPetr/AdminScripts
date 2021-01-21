@@ -1,0 +1,53 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/site-design-script-actions.schema.json",
+    "actions": [
+        {
+            "verb": "createSPList",
+            "listName": "DocTypes",
+            "hidden": false,
+            "templateType": 101,
+            "subactions": [
+                {
+                    "verb": "addContentType",
+                    "name": "DocType"
+                },
+                {
+                    "verb": "removeContentType",
+                    "name": "Document"
+                },
+                {
+                    "verb": "addSPView",
+                    "name": "All Documents",
+                    "viewFields": [
+                        "DocIcon",
+                        "LinkFilename",
+                        "Modified",
+                        "Editor"
+                    ],
+                    "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+                    "rowLimit": 30,
+                    "isPaged": true,
+                    "makeDefault": true
+                }
+            ]
+        },
+        {
+            "verb": "createSPList",
+            "listName": "DocExtends",
+            "hidden": false,
+            "templateType": 100,
+            "subactions": [
+                {
+                    "verb": "addContentType",
+                    "name": "DocExtend"
+                },
+                {
+                    "verb": "removeContentType",
+                    "name": "Item"
+                }
+            ]
+        }
+    ],
+    "bindata": { },
+    "version": 1
+  }
