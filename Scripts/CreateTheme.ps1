@@ -1,21 +1,15 @@
-# Set environment variables
-$path = "C:\Repos\AdminScripts"
+# Clear Console
+Clear-Host
 
 # Prepare Log File Name
-$dt = Get-Date -Format "yy-MM-dd-HH-mm"
-$fname = "{0}\Logs\log-{1}.txt" -f $path, $dt 
+$dt = Get-Date -Format "yy-MM-dd-HH"
+$fname = "log-{0}.txt" -f $dt
 
 # Start Logging
-Start-Transcript -Path $fname -Append -NoClobber
-
-# Greet Log Readers
-Write-Information "Hi there ;)"
-
-# Check Installed Module version
-Get-Module -Name SharePointPnPPowerShellOnline -ListAvailable | Select-Object Name,Version | Out-Default
+Start-Transcript -Path ..\Logs\$fname -Append -NoClobber
 
 # Get Admin Credentials from params.json
-$params = Get-Content $path\params.json -ErrorAction Stop | Out-String | ConvertFrom-Json
+$params = Get-Content ..\params.json | Out-String | ConvertFrom-Json
 $orgName = $params.orgName
 $password = $params.adminPSW | ConvertTo-SecureString -asPlainText -Force 
 $userCredential = New-Object System.Management.Automation.PSCredential($params.adminUPN,$password)
@@ -48,8 +42,11 @@ $themepalette = @{
   "black" = "#252323";
   "white" = "#ffffff";
   }
+  
+$tname = "CLOUDEDU-{0}" -f $dt
+Add-SPOTheme -Identity $tname -Palette $themepalette -IsInverted $false -Overwrite
 
-Add-SPOTheme -Identity "AVX-DMS" -Palette $themepalette -IsInverted $false -Overwrite
+Write-Host "Theme name: $tname"
 
 # Disconnect Tenant
 Disconnect-SPOService

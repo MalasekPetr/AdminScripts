@@ -16,13 +16,13 @@ $userCredential = New-Object System.Management.Automation.PSCredential($params.a
 
 # Connect to SharePoint Administration
 $url = "https://{0}-admin.sharepoint.com" -f $orgName
-Connect-PnPOnline -Url $url -Credential $userCredential -ErrorAction Stop | Out-Default
+Connect-SPOService -Url $url -Credential $userCredential -ErrorAction Stop
 
-Get-PnPSiteDesign | ForEach-Object {Remove-PnPSiteDesign -Identity $_.Id -Force}
-Get-PnPSiteScript | ForEach-Object {Remove-PnPSiteScript -Identity $_.Id -Force}
+# List Site Designs
+Get-SPOSiteDesign | Select-Object Id,Title,WebTemplate | Out-Default
 
-# Disconnect
-Disconnect-PnPOnline
+# Disconnect Tenant
+Disconnect-SPOService
 
 # Stop Logging
 Stop-Transcript

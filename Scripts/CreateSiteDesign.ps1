@@ -18,10 +18,23 @@ $userCredential = New-Object System.Management.Automation.PSCredential($params.a
 $url = "https://{0}-admin.sharepoint.com" -f $orgName
 Connect-PnPOnline -Url $url -Credential $userCredential -ErrorAction Stop | Out-Default
 
-Get-PnPSiteDesign | ForEach-Object {Remove-PnPSiteDesign -Identity $_.Id -Force}
-Get-PnPSiteScript | ForEach-Object {Remove-PnPSiteScript -Identity $_.Id -Force}
+$baselistsjson = Get-Content ..\Designs\BaseLists.json -Raw
+$baselists = Add-PnPSiteScript -Title "CLOUDEDU Base Lists" -Content $baselistsjson
 
-# Disconnect
+$navigationjson = Get-Content ..\Designs\Navigation.json -Raw
+$navigation = Add-PnPSiteScript -Title "CLOUDEDU Navigation" -Content $navigationjson
+
+$themejson = Get-Content ..\Designs\Theme.json -Raw
+$theme = Add-PnPSiteScript -Title "CLOUDEDU Theme" -Content $themejson
+
+# Create new SiteDesign
+$scriptname = "CLOUDEDU Team Site ({0})" -f $dt
+Add-PnPSiteDesign -Title $scriptname `
+                -WebTemplate "64" `
+                -SiteScriptIds $baselists.Id, $navigation.Id, $theme.Id `
+                -Description "CLOUDEDU Team Site"
+
+# Disconnect Site
 Disconnect-PnPOnline
 
 # Stop Logging

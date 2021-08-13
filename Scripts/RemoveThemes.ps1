@@ -18,8 +18,7 @@ $userCredential = New-Object System.Management.Automation.PSCredential($params.a
 $url = "https://{0}-admin.sharepoint.com" -f $orgName
 Connect-PnPOnline -Url $url -Credential $userCredential -ErrorAction Stop | Out-Default
 
-Get-PnPSiteDesign | ForEach-Object {Remove-PnPSiteDesign -Identity $_.Id -Force}
-Get-PnPSiteScript | ForEach-Object {Remove-PnPSiteScript -Identity $_.Id -Force}
+Get-PnPTenantTheme | ForEach-Object {Remove-PnPTenantTheme -Identity $_.Name}
 
 # Disconnect
 Disconnect-PnPOnline

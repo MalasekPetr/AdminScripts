@@ -3,9 +3,7 @@
     "actions": [
         {
             "verb": "applyTheme",
-            "themeName": "AVX-DMS"
+            "themeName": "CLOUDEDU-21-08-13-11"
         }
-    ],
-    "bindata": { },
-    "version": 1
+    ]
 }
