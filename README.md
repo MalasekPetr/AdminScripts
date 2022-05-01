@@ -1,6 +1,6 @@
 # SharePoint Online Administration Scripts 
 ## Introduction 
-Scripts for Sharepoint courses GOC222, MOC MS-040 ...
+Scripts for Sharepoint courses GOC222 ...
 
 # Project Folders
 
